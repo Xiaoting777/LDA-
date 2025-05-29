@@ -2,7 +2,7 @@
 LDA analysis (including topic intensity evolution) and quotation identification (for long texts in English and Russian)
 Анализ LDA (включая эволюцию интенсивности тем) и идентификация цитат (для длинных текстов на английском и русском языках)
 
-**LDA Topic Modeling for Cross-Country Media Discourse Analysis**  
+**I. LDA Topic Modeling for Cross-Country Media Discourse Analysis**  
 This Python script performs comprehensive LDA topic modeling on media texts from three countries (China, Russia, USA) using Gensim. Key features:  
 
 1. **Multilingual Analysis**  
@@ -41,48 +41,55 @@ The pipeline enables comparative analysis of media discourse patterns across geo
 
 
 # II. Reporting Verbs Analysis for Cross-Linguistic Media Discourse
+Here's a concise English README for the reporting verbs analysis scripts:
+
+---
+
+**II.Reporting Verbs Analysis for Cross-Linguistic Media Discourse**  
 This Python toolkit analyzes reporting verbs and speech representation patterns in multilingual media texts. It features:
 
-**Core Functionality**
-**1.Multilingual Processing Pipelines**
-English/Chinese: Uses spaCy for syntactic parsing
-Russian: Leverages pymorphy2 for lemmatization
-Shared reporting verb lexicons with polarity labels
+### Core Functionality
+1. **Multilingual Processing Pipelines**
+   - English/Chinese: Uses spaCy for syntactic parsing
+   - Russian: Leverages pymorphy2 for lemmatization
+   - Shared reporting verb lexicons with polarity labels
 
-**2.Speech Representation Detection**
-Direct quotes: Identifies quoted content with contextual verb attribution
-Indirect quotes: Detects complement clauses and reporting phrases
-Russian-specific: Handles Cyrillic quotes and "что" constructions
+2. **Speech Representation Detection**
+   - **Direct quotes**: Identifies quoted content with contextual verb attribution
+   - **Indirect quotes**: Detects complement clauses and reporting phrases
+   - **Russian-specific**: Handles Cyrillic quotes and "что" constructions
 
-**3. Key Features**
-Customizable verb/phrase dictionaries
-Polarity classification (positive/negative/neutral)
-Sentence-level granularity
-Automated Excel reporting
+3. **Key Features**
+   - Customizable verb/phrase dictionaries
+   - Polarity classification (positive/negative/neutral)
+   - Sentence-level granularity
+   - Automated Excel reporting
 
-**Technical Implementation**
-
-1)English/Chinese processing
+### Technical Implementation
+```bash
+# English/Chinese processing
 python reporting_verbs_диссертация.py --input china_yuanwen.csv
 
-2) Russian processing
+# Russian processing
 python reporting_verbs_диссертация.py --input RU_yuanwen.csv
 
-3) Short quote filter (post-processing)
+# Short quote filter (post-processing)
 python quote_filter.py --input result_RU.xlsx
+```
 
-**Outputs**
-1.result_XX.xlsx: Sentence-level verb annotations
-2.report_XX.xlsx: Statistical summaries:
-- Verb frequency distributions
-- Polarity breakdowns
-- Direct/indirect speech ratios
-3.filtered_quotes.xlsx: Quotes with ≤3 words (RU)
+### Outputs
+- `result_XX.xlsx`: Sentence-level verb annotations
+- `report_XX.xlsx`: Statistical summaries:
+  - Verb frequency distributions
+  - Polarity breakdowns
+  - Direct/indirect speech ratios
+- `filtered_quotes.xlsx`: Quotes with ≤3 words (RU)
 
-**Dependencies**
-spaCy (en_core_web_lg)
-pymorphy2 (Russian)
-pandas, regex, tqdm
+### Dependencies
+- spaCy (`en_core_web_lg`)
+- pymorphy2 (Russian)
+- pandas, regex, tqdm
+
 
 
 
